@@ -1,0 +1,1 @@
+exports.getIngredients = require('./getIngredients.js')
