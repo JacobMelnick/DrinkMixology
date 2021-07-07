@@ -1,4 +1,10 @@
-const controller = require('./controller')
+const controller = require('./controller/byIngredient.js')
 const router = require('express').Router()
 
-router.get('www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin', controller.byIngredient.get)
+router.get('/getData', controller.get)
+
+router.get('/random', controller.random)
+
+router.get('/getVodka', controller.getVodka)
+
+module.exports = router
