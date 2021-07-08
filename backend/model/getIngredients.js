@@ -1,5 +1,6 @@
 const axios = require('axios')
 
+
 module.exports = {
     byIngredient: (() => {
         let options = {
@@ -24,4 +25,5 @@ module.exports = {
         }
         return axios(options)
     })
+
 }

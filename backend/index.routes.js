@@ -8,3 +8,4 @@ router.get('/random', controller.random)
 router.get('/getVodka', controller.getVodka)
 
 module.exports = router
+

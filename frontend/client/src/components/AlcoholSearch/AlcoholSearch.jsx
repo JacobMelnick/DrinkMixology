@@ -61,7 +61,7 @@ const AlcoholSearch = ({
           </h1>
           <span>
             <button
-              style={{ float: "right", cursor: "pointer", marginRight: "30px" }}
+              style={{ float: "right", cursor: "pointer", marginRight: "30px", borderRadius: '25px', backgroundColor: 'rgba(253,187,45,1)', color: 'black'  }}
               onClick={() => {logout(), handleClear()}}
             >
               Log Out
@@ -71,12 +71,11 @@ const AlcoholSearch = ({
             Search different alcohol types to see recipes
           </h3>
           <div>
-            {/* <h3 style={{ margin: "30px" }}>Main Ingredient</h3> */}
             <form>
               <select
                 onChange={setAlcohol}
                 value={selectedTag}
-                style={{ margin: "30px" }}
+                style={{ margin: "30px", borderRadius: '1px', backgroundColor: 'rgba(253,187,45,1)', color: 'black' , borderRadius: '25px'  }}
               >
                 <option>Choose here</option>
                 <option>Vodka</option>
@@ -84,14 +83,14 @@ const AlcoholSearch = ({
               </select>
             </form>
             <button
-              style={{ margin: "30px", cursor: "pointer" }}
+              style={{ margin: "30px", cursor: "pointer", borderRadius: '25px', backgroundColor: 'rgba(253,187,45,1)', color: 'black'  }}
               onClick={() => resetSearch()}
             >
               Make new Search
             </button>
             <br></br>
             <button
-              style={{ marginTop: "30px", margin: "30px", cursor: "pointer" }}
+              style={{ marginTop: "30px", margin: "30px", cursor: "pointer", borderRadius: '25px', backgroundColor: 'rgba(253,187,45,1)', color: 'black'  }}
               onClick={() => randomDrink()}
             >
               Make Me A Random Drink

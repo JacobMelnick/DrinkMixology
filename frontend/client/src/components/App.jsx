@@ -14,6 +14,21 @@ const App = () => {
     user: "",
     password: "",
   });
+  const [currentUsers, setCurrentUsers] = useState([]);
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const postData = () => {
+    axios
+      .post("http://localhost:3000/users", {
+        username: user.user.toLowerCase(),
+        password: user.password.toLowerCase(),
+      })
+      .then((response) => console.log())
+      .catch((err) => console.log(err));
+  };
 
   const getData = () => {
     axios({
@@ -33,26 +48,33 @@ const App = () => {
         setVodka(response.data);
       })
       .catch((err) => console.log(err));
-  };
 
-  useEffect(() => {
-    getData();
-  }, []);
+    axios
+      .get("http://localhost:3000/users")
+      .then((response) => {
+        setCurrentUsers(response.data);
+      })
+      .catch((err) => console.log(err));
+  };
 
   const showLoginScreen = () => {
     if (user.user === "" || user.password === "") {
       alert("please fill out all data to login");
     } else {
-      setShowLogin(!showLogin);
+
+      currentUsers.map((person) => {
+        if (person.username === user.user && person.password === user.password) {
+          postData();
+          setShowLogin(!showLogin);
+        } else if (
+          person.username === user.user &&
+          person.password !== user.password
+        ) {
+          alert("wrong password");
+        }
+      });
     }
-    axios
-      .post("/users", { username: user.user, password: user.password })
-      .then((response) => console.log(response))
-      .catch((err) => console.log(err));
-    // add login authorization here
-    // if user exist search db to check for correct password
-    // if wrong password error message
-    // if username doesnt exist add to db
+
   };
 
   const handleNewUser = (e) => {
@@ -66,6 +88,7 @@ const App = () => {
     setShowLogin(!showLogin);
     setShowList(false);
     setUser({ user: "", password: "" });
+    getData();
   };
 
   return (
@@ -79,6 +102,8 @@ const App = () => {
           handleNewUser={handleNewUser}
           showLogin={showLogin}
           user={user}
+          currentUsers={currentUsers}
+          getData={getData}
         />
       </div>
       <div>

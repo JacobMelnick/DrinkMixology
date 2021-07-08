@@ -40,5 +40,5 @@ module.exports = {
             console.log(err)
             res.status(401)
         })
-    }
+    },
 }
