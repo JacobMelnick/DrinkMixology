@@ -19,7 +19,6 @@
   "homepage": "https://github.com/JacobMelnick/DrinkMixology#readme",
   "dependencies": {
     "@babel/cli": "^7.14.5",
-    "@rails/webpacker": "rails/webpacker#b6c2180",
     "axios": "^0.21.1",
     "babel": "^6.23.0",
     "bcrypt": "^5.0.1",
