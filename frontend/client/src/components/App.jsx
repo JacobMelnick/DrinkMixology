@@ -10,28 +10,34 @@ const App = () => {
   const [showLogin, setShowLogin] = useState(true);
   const [gin, setGin] = useState([]);
   const [vodka, setVodka] = useState([]);
+  const [rum, setRum] = useState([]);
+  const [tequila, setTequila] = useState([]);
+  const [currentUsers, setCurrentUsers] = useState([]);
+  const [drinkName, setDrinkName] = useState([])
   const [user, setUser] = useState({
     user: "",
     password: "",
   });
-  const [currentUsers, setCurrentUsers] = useState([]);
 
   useEffect(() => {
     getData();
   }, []);
 
+  
   const postData = () => {
     axios
       .post("http://localhost:3000/users", {
         username: user.user.toLowerCase(),
         password: user.password.toLowerCase(),
+        drinks: [...drinkName]
       })
       .then((response) => console.log())
       .catch((err) => console.log(err));
   };
 
   const getData = () => {
-    axios({
+    
+      axios({
       url: "http://localhost:3000/getData",
       method: "GET",
     })
@@ -46,6 +52,24 @@ const App = () => {
     })
       .then((response) => {
         setVodka(response.data);
+      })
+      .catch((err) => console.log(err));
+
+    axios({
+      url: "http://localhost:3000/getRum",
+      method: "GET",
+    })
+      .then((response) => {
+        setRum(response.data);
+      })
+      .catch((err) => console.log(err));
+
+    axios({
+      url: "http://localhost:3000/getTequila",
+      method: "GET",
+    })
+      .then((response) => {
+        setTequila(response.data);
       })
       .catch((err) => console.log(err));
 
@@ -88,8 +112,11 @@ const App = () => {
     setShowLogin(!showLogin);
     setShowList(false);
     setUser({ user: "", password: "" });
+    setDrinkName([])
     getData();
+    postData()
   };
+
 
   return (
     <div className="body">
@@ -108,6 +135,8 @@ const App = () => {
       </div>
       <div>
         <AlcoholSearch
+          drinkName={drinkName}
+          setDrinkName={setDrinkName}
           showLogin={showLogin}
           setShowRandom={setShowRandom}
           showRandom={showRandom}
@@ -116,6 +145,10 @@ const App = () => {
           setShowList={setShowList}
           gin={gin}
           vodka={vodka}
+          rum={rum}
+          tequila={tequila}
+          currentUsers={currentUsers}
+          user={user}
         />
       </div>
     </div>

@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from "react";
-import Ingredients from "./Ingredients.jsx";
-const DisplayAlcohol = ({ drink, showRandom, showList }) => {
-    
+
+
+const DisplayAlcohol = ({ drink, showRandom, showList, handleAddDrink}) => {
+   
 
   return (
     <div style={{ marginLeft: "40%" }}>
       {showList === true && (
         <>
-          <h2>{drink.strDrink}</h2>
+          <h2 className="nameDrink" onClick={(e) => handleAddDrink(e, drink.idDrink)}>{drink.strDrink}</h2>
           <img
             src={drink.strDrinkThumb}
             style={{ height: "400px", height: "600px" }}
@@ -20,7 +21,7 @@ const DisplayAlcohol = ({ drink, showRandom, showList }) => {
       <div>
         {showRandom === true && (
           <>
-            <h2>{drink.strDrink}</h2>
+            <h2 className="nameDrink" onClick={(e) => handleAddDrink(e, drink.idDrink)}s>{drink.strDrink}</h2>
             <span><h3>{drink.strAlcoholic}</h3></span>
             <img
               src={drink.strDrinkThumb}
@@ -36,6 +37,7 @@ const DisplayAlcohol = ({ drink, showRandom, showList }) => {
             </span>
           </>
         )}
+      
       </div>
     </div>
   );

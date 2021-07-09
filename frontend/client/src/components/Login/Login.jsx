@@ -50,7 +50,7 @@ const Login = ({
                 color: "#035E7B",
                 borderRadius: "25px",
               }}
-              type="text"
+              type="password"
               name="password"
               placeholder="password"
               onChange={handleNewUser}

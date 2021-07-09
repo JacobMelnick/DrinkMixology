@@ -17,6 +17,9 @@ const CreateUser = ({currentUsers, setShowCreate, showCreate, getData}) => {
                 .then((response) => console.log())
                 .catch((err) => console.log(err));
             } 
+            if (newUsers.user === person.username) {
+              alert('username taken try again')
+            }
         })
         setShowCreate(!showCreate)
         getData()
