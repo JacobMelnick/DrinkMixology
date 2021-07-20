@@ -82,7 +82,7 @@ const App = () => {
   };
 
   const showLoginScreen = () => {
-    console.log('hello ');
+    
     if (user.user === "" || user.password === "") {
       alert("please fill out all data to login");
     } else {
