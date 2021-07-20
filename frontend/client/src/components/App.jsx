@@ -21,6 +21,7 @@ const App = () => {
 
   useEffect(() => {
     getData();
+    postData()
   }, []);
 
   
@@ -32,7 +33,7 @@ const App = () => {
         password: user.password.toLowerCase(),
         drinks: [...drinkName]
       })
-      .then((response) => console.log(response.data))
+      .then((response) => console.log())
       .catch((err) => console.log(err));
   };
 
@@ -87,7 +88,9 @@ const App = () => {
     if (user.user === "" || user.password === "") {
       alert("please fill out all data to login");
     } else {
-
+      if (currentUsers.length === 0) {
+        alert("please register first");
+      }
       currentUsers.map((person) => {
         if (person.username === user.user && person.password === user.password) {
           postData();

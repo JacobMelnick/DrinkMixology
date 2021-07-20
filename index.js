@@ -22,6 +22,7 @@ app.post('/users', (req, res) => {
     })
     .catch((err) => {
         console.log(err)
+        res.end(err)
         res.status(401)
     })
 })
