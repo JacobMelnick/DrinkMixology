@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
-
-mongoose.connect('mongodb://localhost:27017/drinkApp', {
+const connection = process.env.DATABASE || 'mongodb://localhost:27017/drinkApp'
+mongoose.connect(connection, {
     useCreateIndex: true, 
     useNewUrlParser: true,
     useUnifiedTopology: true,

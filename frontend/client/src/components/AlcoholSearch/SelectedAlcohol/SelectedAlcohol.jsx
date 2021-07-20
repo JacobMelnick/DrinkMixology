@@ -17,7 +17,7 @@ const SelectedAlcohol = ({ random, showList, gin, selectedTag, showRandom, vodka
     }
 
     axios({
-      url: `http://localhost:3000/drinkInfo/${id}`,
+      url: `/drinkInfo/${id}`,
       method: "GET",
     })
       .then((response) => {

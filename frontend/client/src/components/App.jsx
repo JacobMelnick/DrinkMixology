@@ -26,7 +26,7 @@ const App = () => {
   
   const postData = () => {
     axios
-      .post("http://localhost:3000/users", {
+      .post("/users", {
         username: user.user.toLowerCase(),
         password: user.password.toLowerCase(),
         drinks: [...drinkName]
@@ -38,7 +38,7 @@ const App = () => {
   const getData = () => {
     
       axios({
-      url: "http://localhost:3000/getData",
+      url: "/getData",
       method: "GET",
     })
       .then((response) => {
@@ -47,7 +47,7 @@ const App = () => {
       .catch((err) => console.log(err));
 
     axios({
-      url: "http://localhost:3000/getVodka",
+      url: "/getVodka",
       method: "GET",
     })
       .then((response) => {
@@ -56,7 +56,7 @@ const App = () => {
       .catch((err) => console.log(err));
 
     axios({
-      url: "http://localhost:3000/getRum",
+      url: "/getRum",
       method: "GET",
     })
       .then((response) => {
@@ -65,7 +65,7 @@ const App = () => {
       .catch((err) => console.log(err));
 
     axios({
-      url: "http://localhost:3000/getTequila",
+      url: "/getTequila",
       method: "GET",
     })
       .then((response) => {
@@ -74,7 +74,7 @@ const App = () => {
       .catch((err) => console.log(err));
 
     axios
-      .get("http://localhost:3000/users")
+      .get("/users")
       .then((response) => {
         setCurrentUsers(response.data);
       })

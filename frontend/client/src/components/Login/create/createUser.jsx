@@ -10,7 +10,7 @@ const CreateUser = ({currentUsers, setShowCreate, showCreate, getData}) => {
         currentUsers.map((person) => {
             if(newUsers.user !== person.username && newUsers.password !== person.password){
                 axios
-                .post("http://localhost:3000/users", {
+                .post("/users", {
                   username: newUsers.user.toLowerCase(),
                   password: newUsers.password.toLowerCase(),
                 })

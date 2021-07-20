@@ -27,7 +27,7 @@ const AlcoholSearch = ({
 
   const getRandom = () => {
     axios({
-      url: "http://localhost:3000/random",
+      url: "/random",
       method: "GET",
     })
       .then((response) => {
