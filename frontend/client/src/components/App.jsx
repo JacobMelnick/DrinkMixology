@@ -84,7 +84,8 @@ const App = () => {
   };
 
   const showLoginScreen = () => {
-    
+    console.log(user);
+    console.log(currentUsers);
     if (user.user === "" || user.password === "") {
       alert("please fill out all data to login");
     } else {
