@@ -27,11 +27,12 @@ const App = () => {
   const postData = () => {
     axios
       .post("/users", {
+        
         username: user.user.toLowerCase(),
         password: user.password.toLowerCase(),
         drinks: [...drinkName]
       })
-      .then((response) => console.log())
+      .then((response) => console.log(response.data))
       .catch((err) => console.log(err));
   };
 

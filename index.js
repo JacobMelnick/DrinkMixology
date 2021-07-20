@@ -15,7 +15,6 @@ app.use('/', router)
 
 
 app.post('/users', (req, res) => {
-   console.log(req.body);
     user.addUser(req.body)
     .then((data) => {
         res.status(201)
