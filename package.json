@@ -17,6 +17,10 @@
     "url": "https://github.com/JacobMelnick/DrinkMixology/issues"
   },
   "homepage": "https://github.com/JacobMelnick/DrinkMixology#readme",
+  "engines" : {
+    "node" : "16.2.0"
+  },
+  
   "dependencies": {
     "@babel/cli": "^7.14.5",
     "axios": "^0.21.1",
