@@ -1,0 +1,15 @@
+html, body {
+margin: 0;
+height: 100%;
+background: rgb(253,187,45);
+background: linear-gradient(0deg, rgba(253,187,45,1) 14%, rgba(34,193,195,1) 30%, rgba(101,191,149,1) 70%);
+background-attachment: fixed;
+}
+
+.nameDrink {
+    cursor: pointer;
+    width: 30%;
+}
+
+
+
